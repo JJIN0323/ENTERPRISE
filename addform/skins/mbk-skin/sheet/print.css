@@ -1,0 +1,13 @@
+/*remove unneeded page elements*/
+.print {
+	display: none;
+}
+
+
+/* print urls */
+a:after {
+   content: " (" attr(href) ") ";
+}
+  
+
+

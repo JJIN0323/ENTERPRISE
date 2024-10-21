@@ -1,0 +1,227 @@
+<?php if($af_TABLE7[yn_leftmenu] == "on") {?>
+<div class="box_content_wrapper">
+	<div class="box_content_3px">	
+		<h4>CONTENTS</h4>
+		<ul>
+			<?php echo $af_TABLE7[leftmenu_idx];?>
+		</ul>
+	</div>
+</div>
+<?php }?>
+
+<?php if($af_TABLE7[yn_lastest] == "on") {?>
+<!-- ******************************************************************************** -->
+<!--             최근폼 출력 start													  -->
+<!-- ******************************************************************************** -->
+<div class="box_content_wrapper">
+	<div class="box_content_left">
+		<!-- 그룹 이름 -->
+		<h4 class="new">NEW</h4>
+			<?php 
+			#############################################################################
+			# $table = '가져올 테이블'													#
+			# $field = '조건절 필드'													#
+			# $kw =	   '조건절 키워드'													#
+			# $odFld = '정렬에 사용될 기준필드'											#
+			# $desc =  '내림차순 또는 오름차순' asc(오름차순) desc(내림차순)			#
+			# $limit = '가져올 갯수'													#
+			#############################################################################
+
+			$af_tbl5_rows = f_get_afTABLE($table=TABLE5,$field='',$kw='',$odFld='input_date',$desc='desc',$limit=$af_TABLE7[lastestN]);	
+
+			for($i=0;$i < $af_tbl5_rows['res_count'];$i++)
+			{
+			echo "<table>";
+			echo "<tr>";
+			//해당폼의 썸네일 이미지 가져오기
+			$af_arr_format = array("jpg","jpeg","gif");			
+			for($z=0; $z < count($af_arr_format);$z++)
+				{
+				if(file_exists("upload/".$af_tbl5_rows['row'][$i]['name']."/thumb.".$af_arr_format[$z].""))
+					{
+					echo "<td>";
+					echo "<a href=\"view_addform.php?fname=".$af_tbl5_rows['row'][$i]['name']."\">";
+					echo "<img src='upload/".$af_tbl5_rows['row'][$i]['name']."/thumb.".$af_arr_format[$z]."' style='width:70px;height:50px;border:1px solid #c0c0c0;'>";
+					echo "</a>";
+					echo "</td>";
+					}				
+				}		
+			//폼테이블에서 폼제목들[title_text] 가져오기
+			echo "<td style='padding-right:0;'>";
+			echo "<a href=\"view_addform.php?fname=".$af_tbl5_rows['row'][$i]['name']."\">";
+			echo $af_tbl5_rows['row'][$i]['title_text'];
+			echo "</a>";
+			echo "</td>";
+			echo "</tr>";
+			echo "</table>";
+			}
+			?>	
+	</div>
+</div>
+<?}?>
+
+<?php if($af_TABLE7[yn_best] == "on") {?>
+<!-- ******************************************************************************** -->
+<!--             인기폼 출력 start	(카운터 기준)									  -->
+<!-- ******************************************************************************** -->
+<div class="box_content_wrapper">
+	<div class="box_content_left">
+		<!-- 그룹 이름 -->
+		<h4 class="hot_h4">POPULAR</h4>
+			<?php 
+			#############################################################################
+			# $table = '가져올 테이블'													#
+			# $field = '조건절 필드'													#
+			# $kw =	   '조건절 키워드'													#
+			# $odFld = '정렬에 사용될 기준필드'											#
+			# $desc =  '내림차순 또는 오름차순' asc(오름차순) desc(내림차순)			#
+			# $limit = '가져올 갯수'													#
+			#############################################################################
+
+			$af_tbl5_rows = f_get_afTABLE($table=TABLE5,$field='',$kw='',$odFld='count_field',$desc='desc',$limit=$af_TABLE7[bestN]);	
+
+			for($i=0;$i < $af_tbl5_rows['res_count'];$i++)
+			{
+			echo "<table>";
+			echo "<tr>";
+			//해당폼의 썸네일 이미지 가져오기
+			$af_arr_format = array("jpg","jpeg","gif");			
+			for($z=0; $z < count($af_arr_format);$z++)
+				{
+				if(file_exists("upload/".$af_tbl5_rows['row'][$i]['name']."/thumb.".$af_arr_format[$z].""))
+					{
+					echo "<td>";
+					echo "<a href=\"view_addform.php?fname=".$af_tbl5_rows['row'][$i]['name']."\">";
+					echo "<img src='upload/".$af_tbl5_rows['row'][$i]['name']."/thumb.".$af_arr_format[$z]."' style='width:70px;height:50px;border:1px solid #c0c0c0;'>";
+					echo "</a>";
+					echo "</td>";
+					}				
+				}		
+			//폼테이블에서 폼제목들[title_text] 가져오기
+			echo "<td style='padding-right:0;'>";
+			echo "<a href=\"view_addform.php?fname=".$af_tbl5_rows['row'][$i]['name']."\">";
+			echo $af_tbl5_rows['row'][$i]['title_text'];
+			echo "</a>";
+			echo "</td>";
+			echo "</tr>";
+			echo "</table>";
+			}
+			?>		
+	</div>
+</div>
+<?}?>
+
+
+<?php if($af_TABLE7[yn_thumblist] == "on") {?>
+<!-- ******************************************************************************** -->
+<!--             애드폼 그룹/추가수정에서 추가한 그룹 수 만큼 반복출력 start		  -->
+<!-- ******************************************************************************** -->
+<?php
+#############################################################################
+# asc 오름차순으로 최대 10개의 그룹만 가져오게 하였으모로 필요시 수정   	#
+#############################################################################
+//
+$af_tbl3_rows = f_get_afTABLE($table=TABLE3,$field='',$kw='',$odFld='no',$desc='asc',$limit='10');	
+
+			for($gi=0;$gi < $af_tbl3_rows['res_count'];$gi++)
+{?>
+<!-- 해당그룹에 속한 모든폼의 제목과 링크 반복출력 start -->
+<div class="box_content_wrapper">
+	<div class="box_content">
+		<!-- 그룹 이름 -->
+		<h4><?php echo $af_tbl3_rows['row'][$gi]['name'];?></h4>
+			<?php 
+			#############################################################################
+			# $table = '가져올 테이블'													#
+			# $field = '조건절 필드'													#
+			# $kw =	   '조건절 키워드'													#
+			# $odFld = '정렬에 사용될 기준필드'											#
+			# $desc =  '내림차순 또는 오름차순' asc(오름차순) desc(내림차순)			#
+			# $limit = '가져올 갯수'													#
+			#############################################################################
+
+			$af_tbl5_rows = f_get_afTABLE($table=TABLE5,$field='no_group',$kw=$af_tbl3_rows['row'][$gi]['no'],$odFld='no',$desc='desc',$limit='20');	
+
+			for($i=0;$i < $af_tbl5_rows['res_count'];$i++)
+			{
+			echo "<table>";
+			echo "<tr>";
+			//해당폼의 썸네일 이미지 가져오기
+			$af_arr_format = array("jpg","jpeg","gif");			
+			for($z=0; $z < count($af_arr_format);$z++)
+				{
+				if(file_exists("upload/".$af_tbl5_rows['row'][$i]['name']."/thumb.".$af_arr_format[$z].""))
+					{
+					echo "<td>";
+					echo "<a href=\"view_addform.php?fname=".$af_tbl5_rows['row'][$i]['name']."\">";
+					echo "<img src='upload/".$af_tbl5_rows['row'][$i]['name']."/thumb.".$af_arr_format[$z]."' style='width:70px;height:50px;border:1px solid #c0c0c0;'>";
+					echo "</a>";
+					echo "</td>";
+					}				
+				}		
+			//폼테이블에서 폼제목들[title_text] 가져오기
+			echo "<td style='padding-right:0;'>";
+			echo "<a href=\"view_addform.php?fname=".$af_tbl5_rows['row'][$i]['name']."\">";
+			echo $af_tbl5_rows['row'][$i]['title_text'];
+			echo "</a>";
+			echo "</td>";
+			echo "</tr>";
+			echo "</table>";
+			}
+			?>			
+	</div>
+</div>
+<!-- 해당그룹에 속한 모든폼의 제목과 링크 반복출력 end -->
+
+<?}?>
+<?php }?>
+
+<?php if($af_TABLE7[yn_tel] == "on") {?>
+<!-- ******************************************************************************** -->
+<!--             전화/팩스번호 출력 start											  -->
+<!-- ******************************************************************************** -->
+<div class="box_content_wrapper">
+	<div class="box_content_company">	
+		<h4>COMPANY</h4>
+		<ul>
+			<li style="font-size:1.1em;color:#6b5c59;">대표전화</li>
+			<!-- 전체폼기본 설정에서 설정한 전화번호  -->
+			<li><?php echo $af_TABLE1["tel"];?></li>
+			<?php if($af_TABLE1["fax"]){?>
+			<li style="font-size:1.1em;color:#6b5c59;">팩시밀리</li>
+			<!-- 전체폼기본 설정에서 설정한 팩스번호  -->
+			<li><?php echo $af_TABLE1["fax"];?></li>
+			<?}?>
+		</ul>
+	</div>
+</div>
+<?}?>
+
+<?php if($af_TABLE7[yn_bank] == "on") {?>
+<!-- ******************************************************************************** -->
+<!--             무통장 start														  -->
+<!-- ******************************************************************************** -->
+<?php 
+$bankingArr = explode("|",$af_TABLE1["banking"]);									
+?>
+<div class="box_content_wrapper">
+	<div class="box_content_bank">	
+		<h4>무통장입금은행</h4>
+		<ul>
+			<li style="color:#6b5c59;">은행</li>			
+			<li><?php echo $bankingArr[0];?></li>			
+			<li style="color:#6b5c59;">계좌번호</li>			
+			<li><?php echo $bankingArr[1];?></li>
+			<li style="color:#6b5c59;">예금주</li>			
+			<li><?php echo $bankingArr[2];?></li>
+		
+		</ul>
+	</div>
+</div>
+<?}?>
+
+<!-- 좌측 추가코딩  -->
+<?php if($af_TABLE7[yn_left_custom] == "on") echo $af_TABLE7[left_custom];?>
+
+
+

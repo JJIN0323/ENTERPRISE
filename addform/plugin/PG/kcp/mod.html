@@ -1,0 +1,49 @@
+<!--
+    /* ============================================================================== */
+    /* =   PAGE : 취소/매입 요청 PAGE                                               = */
+    /* = -------------------------------------------------------------------------- = */
+    /* =   Copyright (c)  2006   KCP Inc.   All Rights Reserverd.                   = */
+    /* ============================================================================== */
+//-->
+<html>
+<head>
+<title>*** KCP Online Payment System [PHP Version] ***</title>
+<link href="css/sample.css" rel="stylesheet" type="text/css">
+<script language='javascript'>
+function  jsf__go_mod( form )
+{
+    if ( form.mod_type.value != 'mod_type_not_sel' )
+    {
+        if ( form.tno.value.length < 14 )
+        {
+            alert( "KCP 거래 번호를 입력하세요" );
+            form.tno.focus();
+            form.tno.select();
+        }
+        else
+        {
+            openwin = window.open( 'proc_win.html', 'proc_win', 'width=449, height=209, top=300, left=300' );
+            form.submit();
+        }
+    }
+    else
+    {
+        alert( "거래 구분을 선택하여 주십시요." );
+        form.mod_type.focus();
+    }
+}
+
+</script>
+</head>
+<body onload="jsf__go_mod(document.mod_form)">
+
+<form name="mod_form" action="pp_ax_hub.php" method="post">
+	<input type='hidden' name='site_cd'  value='T0000' >
+	<input type='hidden' name='site_key' value='3grptw1.zW0GSo4PQdaGvsF__'>
+	<input type='hidden' name='req_tx'   value='mod'>
+	<input type='hidden' name='mod_type'   value='STSC'>
+	<input type='hidden' name='tno' value='<?php echo $_GET[tno];?>' size='20'>
+	<input type='hidden' name='mod_desc' value='' size='20' maxlength='100' value="선예약자가 있어서 결제취소">
+	</form>
+</body>
+</html>

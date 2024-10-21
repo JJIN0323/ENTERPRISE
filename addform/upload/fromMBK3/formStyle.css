@@ -1,0 +1,234 @@
+/***************************************************************************************/
+/* 폼 공통적용 스타일 */
+/***************************************************************************************/
+
+/* 폼의 전체 여백 속성 설정 */
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+html,body{margin:0; padding:0; background-color: #3598dc; color: #3b3b3a; font-family: \'Nanum Gothic\';}
+
+/* link 스타일 */
+A:link{TEXT-DECORATION:none; COLOR:#3260AD;}
+A:hover{TEXT-DECORATION:none; COLOR:#004A84; BORDER:none;}
+A:visited{TEXT-DECORATION:none; COLOR:#616588; BORDER:none;}
+
+/* 이미지 스타일  */
+IMG {BORDER:none;}
+
+/* 테이블 스타일  */
+TABLE {border-collapse:collapse;}
+
+/* 폼객체 스타일 */
+INPUT{width:100%;}
+SELECT {}
+TEXTAREA{width:100%;}
+
+/***************************************************************************************/
+/* 폼분류 선택상자 div, 테이블,선택상자 스타일  */
+/* 전체폼기본환경설정에서 폼분류 선택상자 표시 여부를 no에 체크하면 */
+/* 품분류선택상자는 폼상단에 나타나지 않습니다. */
+/***************************************************************************************/
+div.groupANDform{
+margin-bottom:20px; border:2px solid #6581a2; background-color:#f3f4f3; text-align:left;
+background-repeat:no-repeat;
+background-position:20px 5px;	
+}
+.groupANDform table{width:100%;}
+.groupANDform td{width:50%; padding:20px; font-size:15px; font-weight:bold; color:gray;}
+.groupANDform select{}
+
+
+/***************************************************************************************/
+/* 폼형식이 폼메일일 때 사용될 스타일 정의 */
+/***************************************************************************************/
+
+/* 상단 배너이미지 td 스타일(폼메일, 주문폼 공통) */
+td#top_img {text-align:left;}
+
+/* 폼메일 제목 div 스타일 */
+div#form_title {text-align:left; border-bottom:3px solid #3598dc; margin-top:20px;}   
+
+/* 폼메일 제목 h3 스타일  */
+div#form_title h3{font-size:1.2em; font-weight:bold; border-bottom:1px solid #bfbfbf; padding-bottom:10px; margin:0; color:#333;}
+
+/* 상단에 표시될 글  div 스타일 (폼메일, 주문폼 공통) */
+div#msg_top {text-align:left;margin:10px 0 10px 0;}
+
+/* 폼메일 항목들 테이블과 td 스타일 */
+table#formmail_items{width:100%;}
+#formmail_items td{border:5px solid #3598dc; padding:3px 9px 3px 3px; height: 50px; border-left: 0px;}
+
+/* 단락구분에 사용되는 td의 스타일 */ 
+#formmail_items .af_divi{margin:0; padding:20px 0 5px 0; border:0; border-bottom:3px solid #bbbbbb; text-align:left;}
+
+/* 폼메일 항목 td 스타일 */
+#formmail_items td.item{border:5px solid #3598dc; border-right: 0px; background-color: #f0eee9; background-repeat: repeat-x; text-align: left; font-size:15px; font-weight: bold; color: #3b3b3a; font-family: \'Nanum Gothic\'; width: 80px; padding-left: 10px;}
+
+/* 폼메일 항목 오른쪽 입력필드 td 스타일 */ 
+#formmail_items td.val{text-align:left; background-color: #f0eee9; font-size: 15px;}
+
+/* 폼메일 항목 간단설명 스타일 */
+#formmail_items .item_tip{color:#fff; font-size:11px; line-height:1.2em; margin:0; padding:0;}
+
+/* 폼메일 고객주소입력 테이블 */
+#formmail_items .c_address {width:100%;}
+#formmail_items .c_address td{border:0;padding-left:0;}
+#formmail_items .c_address input{}
+
+/* 마우스가 올라갔을 때, 변하는 행 배경색상 */
+tr.roll_table{background-color:#f5f5f2;}
+
+/* 필수입력필드 배경색상 */
+INPUT.ess{background-color:#FAFAD2;}
+TEXTAREA.ess{background-color:#FAFAD2;}
+INPUT.essSelect{background-color:#FAFAD2;}
+TEXTAREA.essSelect{background-color:#FAFAD2;}
+SELECT.essSelect{background-color:#FAFAD2;}
+
+/* 폼메일 테이블 하단 전송버튼 바로위 마감 테두리 스타일 */
+div#form_foot {margin:0;padding:0; border-top:3px solid #bbbbbb; display: none;}
+
+/* 폼메일 합계 테이블과 td 스타일 */
+#formmail_sum table{width:100%;border:1px solid #f0eee9; background-color:#3598dc;} 
+#formmail_sum td{font-size:1.1em;font-weight:bold;text-align:right;color:#666;padding:10px 10px 10px 0;}
+
+/* 폼메일 하단 합계 입력필드 스타일 */
+#formmail_sum INPUT {font-size:1.2em;color:blue;text-align:right;font-weight:bold;border-bottom:1px solid #666;}
+
+/*전송 버튼 크기와 폰트스타일*/
+input.btn_big{width:100px; height:35px;}
+
+/* 물품상세이미지 div 스타일(폼메일, 주문폼 공통) */
+div#detail_img {line-height:1.3em;margin-top:20px;}
+
+/* 하단에 표시될글 div 스타일(폼메일, 주문폼 공통) */
+div#msg_bottom{text-align:center;color:gray;}
+
+
+/***************************************************************************************/
+/* 폼형식이 주문폼일 때 사용될 스타일 정의 */
+/***************************************************************************************/
+
+/* 주문폼 폼제목 div 스타일 */
+div#order_head {margin:0;padding:0;text-align:left;clear:both;}
+
+/* 주문폼 제목 p 문단 스타일 */
+p#f_title {font-size:16px;font-family:굴림;font-weight:bold;height:40px;padding:12px 0 0 80px;background-repeat:no-repeat;margin:5px 0 5px 0;}
+
+/* 주문 품목 div 스타일 */
+div#order_table_div {border-top:2px solid #4a4a4a;}
+
+/* 주문 품목 테이블과 td 스타일 */
+table#order_table {width:100%;}
+#order_table TD {border:0px solid #656565;border-bottom:1px solid #656565;}
+
+/* 주문 품목 상단 구분제목들 td 스타일 */
+#order_table .title_td  {border-top:2px solid #656565;border-right:1px solid #ffffff;border-bottom:1px solid #656565;background-color:#656565;color:#ffffff;font-weight:bold;}
+
+/* 제품이름 스타일 */
+.order_item{font-weight:bold;color:#333;}
+
+/* 제품 간단설명 스타일 */
+.order_item_tip{color:#666;}
+
+/* 제품옵션 div 와 부속 태그 스타일(사용자입력형일 경우) */
+.order_item_opt_text{margin-top:5px;padding-top:2px;border-top:1px dotted #cccccc;font-family:굴림,Times New Roman;font-size:12px;background-color:#e8e8e8;}
+.order_item_opt_text span{color:gray;font-size:11px;}
+.order_item_opt_text input{font-family:굴림,Times New Roman;font-size:11px;}
+
+/* 제품옵션 div 와 부속태그  스타일(펼침목록일 경우) */
+.order_item_opt_selectBox{margin-top:5px;padding-top:2px;border-top:1px dotted #cccccc;font-family:굴림,Times New Roman;font-size:11px;background-color:#e8e8e8;}
+.order_item_opt_selectBox span{color:gray;font-size:11px;}
+
+/* 주문폼 구매고객/수취인 정보입력 테이블 스타일 */
+table#order_client{width:100%;}
+
+/* 구매자/수취인 테이블 단 굵은제목 스타일 */
+#order_client .af_divi{margin:0;padding:20px 0 5px 0;border:0;border-bottom:3px solid #bbbbbb;text-align:left;}
+
+/* 주문폼 구매고객/수취인 정보입력 td 스타일 */
+#order_client td{border:1px solid #cccccc;padding:3px 5px 2px 5px;}
+
+/* 주문폼 구매고객/수취인 정보입력 항목td 스타일 */ 
+#order_client td.item{background-color:#e9e9e9;background-repeat:repeat-x;text-align:left; border-left:1px solid #cccccc;font-size:11px;font-weight:bold;color:#333;}
+
+/* 주문폼 구매고객/수취인 정보입력 입력td 스타일 */
+#order_client td.val{text-align:left;}
+
+/* 주문폼 고객주소입력 테이블	   */
+#order_client .c_address {width:100%;}
+#order_client .c_address td{border:0;padding-left:0;}
+#order_client .c_address input{}
+
+
+/***************************************************************************************/
+/* 접수리스트 list.html에 사용될 스타일 정의 */
+/***************************************************************************************/
+
+/* 제목스타일 */
+h3.title_list{text-align:left;border-left:3px solid #336699;padding-left:3px;}
+
+/* 리스트 테이블 스타일 */
+table#order_list{width:100%;}
+
+/* 리스트 테이블 상단 구분제목 스타일 */
+#order_list th{border:1px solid #b2c0d0;border-top:2px solid #6581a2;height:30px;background-color:#dbe1e9;font-weight:bold;color:#4a607a;}
+
+/* 리스트 테이블 항목들 스타일 */
+#order_list td{border:1px solid #b2c0d0;text-align:center;line-height:2em;color:#333;}
+
+/* 리스트 테이블 진행상황 항목 스타일*/
+#order_list td.situ{color:black;width:100px;}
+
+/* 리스트 테이블 하단 접수하기 버튼 div 스타일 */
+div#write {margin-top:10px;margin-bottom:10px;text-align:right;}
+
+/* 리스트 테이블 하단 검색 div 스타일 */
+div#search{border:2px solid #b2c9d0;text-align:center;padding:10px;}
+
+/***************************************************************************************/
+/* 커스텀 */
+/***************************************************************************************/
+#license,.groupANDform,#form_title,#msg_top{display: none;}
+
+INPUT.ess, SELECT.essSelect {background-color: #f0eee9; height: 50px; border: 0; font-size: 15px; width: 100%;}
+
+#form_foot{display: none;}
+.client_file{display: none;}
+
+.print {text-align: center; width: 100%;}
+
+.print>input + input{display:none;}
+
+input.btn_big {width: 100%; height: 60px; background-color: #3b3b3a; color: #fff; font-size:15px; font-family: \'Nanum Gothic\'; 
+				margin-bottom: 5px;  font-weight: 700; transition: all 0.5s; cursor: pointer;
+				border: 5px solid #3598dc; border-top: 0px; border-bottom: 0px;}
+input.btn_big:hover {color: #fff; background-color: #2fcc71;}
+
+/* 
+ * 05. 확인 버튼 박스 DIV*/
+.print{width: 100% !important;}
+
+
+#submit hr {display: none;}
+#formmail_items td.item {}
+
+#formmail_items .roll_table {background: none; background-color: none;}
+
+
+td#form {padding: 0px;}
+div#form_cap {display: none;}
+div#form_head {display: none;}
+
+/* 별색 */
+.item span{color: red !important;}
+
+#input_data1 {border: 0px; font-size: 15px; background-color: #f0eee9;}
+#input_data2 {border: 0px; font-size: 15px; background-color: #f0eee9;}
+#input_data3 {border: 0px; font-size: 15px;}
+
+.val .essSelect{text-align: left; width: 20px;}
+
+#detail_img{display: none;}
+
+div#form_wrapper hr {display: none !important;}

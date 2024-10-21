@@ -1,0 +1,55 @@
+/*-------------------------------------------------------------------------------------*/
+/*					애드타임 설치화면에 사용되는 스타일시트입니다.					   */
+/*-------------------------------------------------------------------------------------*/
+
+/* 공통 속성 설정 */
+body{font-family: "굴림", "굴림체",  "Arial";font-size:13px;}
+div{width:100%;margin:10px 0 10px 0;}
+table{width:100%;border-collapse: collapse;}
+fieldset{cursor:default;width:600px;margin:20px 0 20px 0;}
+fieldset p{color:#999;padding-left:20px;}
+legend{font-size:1.2em;font-weight:bold;color:#000;}
+img {border: none;}
+h1{border-left:5px solid #ff6600;font-size:2em;color:#004a84;padding-left:5px;font-weight:bold;}
+h2{font-size:1.5em;color:#004a84;padding-left:5px;border-bottom:1px solid #666;font-weight:bold;}
+h3{font-size:1.3em;color:#004a84;padding-left:5px;font-weight:bold;}
+h4{font-size:1.2em;padding-left:5px;font-weight:bold;}
+li{list-style:none;}
+
+/*	link 속성 설정 	*/
+A:link{color:blue;}
+A:hover{color:red;}
+A:visited{color:blue;}
+
+
+/*-------------------------------------------------------------------------------------*/
+/*								setup.php											   */
+/*-------------------------------------------------------------------------------------*/
+#fixed_div{position:fixed;width:300px;height:300px;top:50%;left:50%;margin-left:-150px;margin-top:-150px;z-index:100;display:none;}
+
+
+/*-------------------------------------------------------------------------------------*/
+/*								setup1.php											   */
+/*-------------------------------------------------------------------------------------*/
+#chk_permsWrapper table{width:600px;margin:3px;padding:0;background-color:#e3e3e3}
+#chk_permsWrapper td{padding:5px;border:1px solid #ccc;}
+#chk_permsWrapper td.left{width:50px;text-align:center;}
+#chk_permsWrapper td.center{text-align:left;}
+#chk_permsWrapper td.right{width:200px;text-align:center}
+#chk_permsWrapper table#head{background-color:#6894a4;color:white;font-weight:bold;}
+#chk_permsWrapper #head td{border:1px solid #316679;height:30px;}
+
+/*-------------------------------------------------------------------------------------*/
+/*								setup2.php											   */
+/*-------------------------------------------------------------------------------------*/
+table.db{width:95%;background-color:#dde9ea;margin:10px;}
+.db td{padding:5px;color:#4d7b7f;}
+td.item{width:110px;font-weight:bold;text-align:right;padding-right:20px;}
+
+/*-------------------------------------------------------------------------------------*/
+/*								uninstall.php										   */
+/*-------------------------------------------------------------------------------------*/
+#uninstall_div{position:fixed;width:300px;height:300px;top:50%;left:50%;margin-left:-150px;margin-top:-150px;z-index:100;display:none;text-align:center;}
+#uninstall_div table {width:100%;border:3px solid #547ea8;margin-top:100px;}
+#uninstall_div td {padding:10px;}
+

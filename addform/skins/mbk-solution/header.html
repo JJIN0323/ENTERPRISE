@@ -1,0 +1,52 @@
+<!--[if IE]>
+<style type="text/css">
+#head_menu ul{display:inline-block;}
+#head_menu ul{display:inline;}
+#head_menu li {float:left;}
+</style>
+<![endif]-->
+<?php
+function f_get_logo()
+{
+	$af_arr_format = array("jpg","jpeg","gif");						   //업로드 된 허용확장자
+	$token = "";
+	for($i=0; $i < count($af_arr_format);$i++)
+		{
+		if(file_exists("upload/logo/logo_img.".$af_arr_format[$i].""))
+			{	
+			$token++;
+			echo "<img src='upload/logo/logo_img.".$af_arr_format[$i]."' style='vertical-align:middle;' alt='로고이미지'>";
+			}	
+		}
+	if($token == 0)
+		{
+			echo "<img src='imgs/logo.gif' style='vertical-align:middle;' alt='로고이미지'>";
+		}
+}
+?>
+<div class="head_wrapper">
+	<div class="site_logo">
+		<!-- 사이트 로고이미지  -->
+		<a href="<?php echo $af_TABLE7[logo_link];?>">
+		<?php
+		f_get_logo();			
+		?>
+		</a>
+	</div>
+
+	<!-- 상단 주메뉴  start -->
+	<?php if($af_TABLE7[yn_topmenu] == "on") {?>
+	<div id="head_menu">
+		<ul id="site_menu">			
+			<?php echo $af_TABLE7[topmenu_idx];?>
+		</ul>
+	</div>
+	<?php }?>
+	<!-- 상단 주메뉴  end -->
+
+	<!-- 상단 추가코딩  start -->
+	<?php if($af_TABLE7[yn_top_custom] == "on") echo $af_TABLE7[top_custom];?>
+	<!-- 상단 추가코딩  end -->
+</div>
+
+

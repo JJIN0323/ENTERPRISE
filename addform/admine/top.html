@@ -1,0 +1,146 @@
+<?php
+include_once("../lib/lib.php");
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"   "http://www.w3.org/TR/html4/strict.dtd">
+<HTML>
+<HEAD>
+<meta http-equiv='content-type' content='text/html; charset=utf-8'>
+<meta name='robots' content='none,noindex,nofollow'>
+<TITLE></TITLE>
+
+<LINK REL="stylesheet" HREF="global.css" TYPE="text/css">
+
+
+<script type="text/javascript">
+<!--
+function na_restore_img_src(name, nsdoc)
+{
+  var img = eval((navigator.appName.indexOf('Netscape', 0) != -1) ? nsdoc+'.'+name : 'document.all.'+name);
+  if (name == '')
+    return;
+  if (img && img.altsrc) {
+    img.src    = img.altsrc;
+    img.altsrc = null;
+  } 
+}
+
+function na_preload_img()
+{ 
+  var img_list = na_preload_img.arguments;
+  if (document.preloadlist == null) 
+    document.preloadlist = new Array();
+  var top = document.preloadlist.length;
+  for (var i=0; i < img_list.length; i++) {
+    document.preloadlist[top+i]     = new Image;
+    document.preloadlist[top+i].src = img_list[i+1];
+  } 
+}
+
+function na_change_img_src(name, nsdoc, rpath, preload)
+{ 
+  var img = eval((navigator.appName.indexOf('Netscape', 0) != -1) ? nsdoc+'.'+name : 'document.all.'+name);
+  if (name == '')
+    return;
+  if (img) {
+    img.altsrc = img.src;
+    img.src    = rpath;
+  } 
+}
+
+// -->
+</script>
+
+
+<script type="text/javascript">
+<!--
+function uninstall() {	                                            //확인창 팝업
+	checking=confirm('<?php echo af_txt_top_1;?>');
+		    	if (checking==true){			  
+                    window.top.location.href='../uninstall.php';
+				}
+				else return false;	
+}
+// -->
+</script>
+
+</HEAD>
+
+<BODY ONLOAD="na_preload_img(false, '<?php echo af_admine_img;?>/btn_top1_over.gif', '<?php echo af_admine_img;?>/btn_top2_over.gif', '<?php echo af_admine_img;?>/btn_top3_over.gif', '<?php echo af_admine_img;?>/btn_top4_over.gif', '<?php echo af_admine_img;?>/btn_top5_over.gif', '<?php echo af_admine_img;?>/btn_top6_over.gif', '<?php echo af_admine_img;?>/btn_top7_over.gif', '<?php echo af_admine_img;?>/btn_top8_over.gif', '<?php echo af_admine_img;?>/btn_topHelp_over.gif','<?php echo af_admine_img;?>/btn_topbackup_over.gif');">
+
+<div style="text-align:left;font-size:16px;"><strong style='color:#20558a;'>애드폼</strong><small> <?php echo af_ver." ".ver_tag;?></small></div>
+<HR>
+<div style="width:190px; height:45px; position:absolute; left:187px; top:10px; z-index:1;">
+<img src="img/sign.gif">
+</div>
+
+<div>
+<TABLE CLASS="noborder">
+	<TR>
+		<TD style="width: 50%;text-align:left" nowrap>
+		
+		<A HREF="index.html" target="_top" ONMOUSEOUT="na_restore_img_src('image1', 'document')" ONMOUSEOVER="na_change_img_src('image1', 'document', '<?php echo af_admine_img;?>/btn_top1_over.gif', true);" onfocus="this.blur()">
+		<IMG SRC="<?php echo af_admine_img;?>/btn_top1.gif" NAME="image1" alt="홈으로">
+		</A>
+		
+		<IMG SRC="img/btnTop_line.gif" alt="">
+
+		<A HREF='addform_order_list.php' TARGET='main_iframe' ONMOUSEOUT="na_restore_img_src('image_order', 'document')" ONMOUSEOVER="na_change_img_src('image_order', 'document', '<?php echo af_admine_img;?>/btn_top8_over.gif', true);" onfocus="this.blur()">
+		<IMG SRC="<?php echo af_admine_img;?>/btn_top8.gif" NAME="image_order" alt="접수목록" onclick="window.parent.main.document.press1.src='<?php echo af_admine_img;?>/btnForm_0.gif';window.parent.main.document.press2.src='<?php echo af_admine_img;?>/btnGroup_0.gif';window.parent.main.document.press3.src='<?php echo af_admine_img;?>/btnAdmin_0.gif';window.parent.main.document.press4.src='<?php echo af_admine_img;?>/btnOrder_2.gif';window.parent.main.document.press5.src='<?php echo af_admine_img;?>/btnLayout_0.gif';window.parent.main.document.press9.src='<?php echo af_admine_img;?>/btnStaff_0.gif';">
+		</A>
+
+		<IMG SRC="img/btnTop_line.gif" alt="">
+		
+		<A HREF='addform_list.php' TARGET='main_iframe' ONMOUSEOUT="na_restore_img_src('image2', 'document')" ONMOUSEOVER="na_change_img_src('image2', 'document', '<?php echo af_admine_img;?>/btn_top2_over.gif', true);" onfocus="this.blur()">
+		<IMG SRC="<?php echo af_admine_img;?>/btn_top2.gif" NAME="image2" alt="폼관리" onclick="window.parent.main.document.press1.src='<?php echo af_admine_img;?>/btnForm_2.gif';window.parent.main.document.press2.src='<?php echo af_admine_img;?>/btnGroup_0.gif';window.parent.main.document.press3.src='<?php echo af_admine_img;?>/btnAdmin_0.gif';window.parent.main.document.press4.src='<?php echo af_admine_img;?>/btnOrder_0.gif';window.parent.main.document.press5.src='<?php echo af_admine_img;?>/btnLayout_0.gif';window.parent.main.document.press9.src='<?php echo af_admine_img;?>/btnStaff_0.gif';">
+		</A>
+
+		<A HREF='addform_list.php' TARGET='main_iframe' ONMOUSEOUT="na_restore_img_src('form_backup', 'document')" ONMOUSEOVER="na_change_img_src('form_backup', 'document', '<?php echo af_admine_img;?>/btn_formBackup_over.gif', true);" onfocus="this.blur()">
+		<IMG SRC="<?php echo af_admine_img;?>/btn_formBackup_1.gif" NAME="form_backup" alt="폼백업" onClick="javascript:void(window.open('backup_forms.php?w=500&amp;h=600&amp;','backup','width=500,height=600,statusbar=no,scrollbars=yes,toolbar=no,menubar=no'));window.parent.main.document.press1.src='<?php echo af_admine_img;?>/btnForm_2.gif';window.parent.main.document.press2.src='<?php echo af_admine_img;?>/btnGroup_0.gif';window.parent.main.document.press3.src='<?php echo af_admine_img;?>/btnAdmin_0.gif';window.parent.main.document.press4.src='<?php echo af_admine_img;?>/btnOrder_0.gif';window.parent.main.document.press5.src='<?php echo af_admine_img;?>/btnLayout_0.gif';window.parent.main.document.press9.src='<?php echo af_admine_img;?>/btnStaff_0.gif';">
+		</A>
+
+		<A HREF='addform_list.php' TARGET='main_iframe' ONMOUSEOUT="na_restore_img_src('form_upload', 'document')" ONMOUSEOVER="na_change_img_src('form_upload', 'document', '<?php echo af_admine_img;?>/btn_topup_over.gif', true);" onfocus="this.blur()">
+		<IMG SRC="<?php echo af_admine_img;?>/btn_topup_1.gif" NAME="form_upload" alt="폼업로드" onClick="javascript:void(window.open('upload_forms.php?w=500&amp;h=600&amp;','backup','width=500,height=600,statusbar=no,scrollbars=yes,toolbar=no,menubar=no'));window.parent.main.document.press1.src='<?php echo af_admine_img;?>/btnForm_2.gif';window.parent.main.document.press2.src='<?php echo af_admine_img;?>/btnGroup_0.gif';window.parent.main.document.press3.src='<?php echo af_admine_img;?>/btnAdmin_0.gif';window.parent.main.document.press4.src='<?php echo af_admine_img;?>/btnOrder_0.gif';window.parent.main.document.press5.src='<?php echo af_admine_img;?>/btnLayout_0.gif';window.parent.main.document.press9.src='<?php echo af_admine_img;?>/btnStaff_0.gif';">
+		</A>	
+
+		<A HREF='addform_Group.php' TARGET='main_iframe' ONMOUSEOUT="na_restore_img_src('image3', 'document')" ONMOUSEOVER="na_change_img_src('image3', 'document', '<?php echo af_admine_img;?>/btn_top3_over.gif', true);" onfocus="this.blur()">
+		<IMG SRC="<?php echo af_admine_img;?>/btn_top3.gif" NAME="image3" alt="폼그룹관리" onclick="window.parent.main.document.press1.src='<?php echo af_admine_img;?>/btnForm_0.gif';window.parent.main.document.press2.src='<?php echo af_admine_img;?>/btnGroup_2.gif';window.parent.main.document.press3.src='<?php echo af_admine_img;?>/btnAdmin_0.gif';window.parent.main.document.press4.src='<?php echo af_admine_img;?>/btnOrder_0.gif';window.parent.main.document.press5.src='<?php echo af_admine_img;?>/btnLayout_0.gif';window.parent.main.document.press9.src='<?php echo af_admine_img;?>/btnStaff_0.gif';">
+		</A>
+		
+		<IMG SRC="img/btnTop_line.gif" alt="">
+		
+		<!--<A HREF='#' TARGET='main_iframe' ONMOUSEOUT="na_restore_img_src('image4', 'document')" ONMOUSEOVER="na_change_img_src('image4', 'document', '<?php echo af_admine_img;?>/btn_top4_over.gif', true);">
+		<IMG SRC="<?php echo af_admine_img;?>/btn_top4.gif" NAME="image4" alt=""></A>-->
+		
+		<A HREF='modify_admine.php' TARGET='main_iframe' ONMOUSEOUT="na_restore_img_src('image5', 'document')" ONMOUSEOVER="na_change_img_src('image5', 'document', '<?php echo af_admine_img;?>/btn_top5_over.gif', true);" onfocus="this.blur()">
+		<IMG SRC="<?php echo af_admine_img;?>/btn_top5.gif" NAME="image5" alt="관리자설정" onclick="window.parent.main.document.press1.src='<?php echo af_admine_img;?>/btnForm_0.gif';window.parent.main.document.press2.src='<?php echo af_admine_img;?>/btnGroup_0.gif';window.parent.main.document.press3.src='<?php echo af_admine_img;?>/btnAdmin_2.gif';window.parent.main.document.press4.src='<?php echo af_admine_img;?>/btnOrder_0.gif';window.parent.main.document.press5.src='<?php echo af_admine_img;?>/btnLayout_0.gif';window.parent.main.document.press9.src='<?php echo af_admine_img;?>/btnStaff_0.gif';">
+		</A>
+
+		<A HREF='admine_list.php' TARGET='main_iframe' ONMOUSEOUT="na_restore_img_src('image9', 'document')" ONMOUSEOVER="na_change_img_src('image9', 'document', '<?php echo af_admine_img;?>/btn_top9_over.gif', true);" onfocus="this.blur()">
+		<IMG SRC="<?php echo af_admine_img;?>/btn_top9.gif" NAME="image9" alt="관리사원등록" onclick="window.parent.main.document.press1.src='<?php echo af_admine_img;?>/btnForm_0.gif';window.parent.main.document.press2.src='<?php echo af_admine_img;?>/btnGroup_0.gif';window.parent.main.document.press3.src='<?php echo af_admine_img;?>/btnAdmin_0.gif';window.parent.main.document.press4.src='<?php echo af_admine_img;?>/btnOrder_0.gif';window.parent.main.document.press5.src='<?php echo af_admine_img;?>/btnLayout_0.gif';window.parent.main.document.press9.src='<?php echo af_admine_img;?>/btnStaff_2.gif';">
+		</A>
+		
+		<IMG SRC="img/btnTop_line.gif" alt="">
+		
+		<!--<A HREF="#" ONMOUSEOUT="na_restore_img_src('image6', 'document')" ONMOUSEOVER="na_change_img_src('image6', 'document', '<?php echo af_admine_img;?>/btn_top6_over.gif', true);">
+		<IMG SRC="<?php echo af_admine_img;?>/btn_top6.gif" NAME="image6" alt=""></A>-->
+		<IMG SRC="<?php echo af_admine_img;?>/btn_topbackup.gif" NAME="image_backup" alt="DB백업" onClick="javascript:void(window.open('backup.php?w=500&amp;h=600&amp;','backup','width=500,height=600,statusbar=no,scrollbars=yes,toolbar=no,menubar=no'))" ONMOUSEOUT="na_restore_img_src('image_backup', 'document')" ONMOUSEOVER="na_change_img_src('image_backup', 'document', '<?php echo af_admine_img;?>/btn_topbackup_over.gif', true);">
+		
+		<IMG SRC="<?php echo af_admine_img;?>/btn_top7.gif" NAME="image7" alt="DB제거" onclick='javascript:void(uninstall())' ONMOUSEOUT="na_restore_img_src('image7', 'document')" ONMOUSEOVER="na_change_img_src('image7', 'document', '<?php echo af_admine_img;?>/btn_top7_over.gif', true);">		
+
+				
+		<IMG SRC="img/btnTop_line.gif" alt="">
+		
+		<A HREF="#" ONMOUSEOUT="na_restore_img_src('image8', 'document')" ONMOUSEOVER="na_change_img_src('image8', 'document', '<?php echo af_admine_img;?>/btn_topHelp_over.gif', true);" onfocus="this.blur()">
+		<IMG SRC="<?php echo af_admine_img;?>/btn_topHelp.gif" NAME="image8" alt="도움말" onclick="window.open('http://www.addform.net/study.php')">
+		</A>
+		
+		</TD>
+		<TD style="width: 50%;" nowrap>			
+			<iframe src='http://www.addform.net/notice.html' frameborder='1' scrolling='no' style='background-color:transparent;width:100%;height:50px;'></iframe>
+		</TD>
+	</TR>
+</TABLE>
+</div>
+</BODY>
+
+</HTML>

@@ -1,0 +1,127 @@
+<?php
+include_once("sheet/php/skin_function.php");
+?>
+
+<!--
+프로그램명 : 애드폼(영문 addform)																		
+프로그램용도: 폼메일,신청서,주문폼/견적서 제작											 
+제작자: 박성규																	   
+공식배포처: http://www.addform.net												
+프로그램 편집시 위 제작자 정보를 편집하거나 삭제해서는 안됩니다
+
+############################### 스킨 제작자 정보 START   ################################
+skin by http://www.addform.net
+
+############################### 스킨 수정/제작시 참고사항   #############################
+스킨파일 제작/수정시 utf-8 로의 편집을 지원하는, 에디터플러스등의 최신 버전을 설치하여 사용하세요.
+에디터플러스에서 편집한다는 가정하에 바람직한 스킨 파일 제작방법입니다.
+아래와 같지않다면, 정상 편집한 파일이라도 웹브라우저상에서 깨지거나 정상실행되지 않을 수 있습니다.
+
+1. 에디터플러스를 실행
+2. 상단 메뉴 문서 > 영구적인 설정을 차례로 클릭
+3. 파일 > 기본인코딩을 UTF-8 로 설정하고, UTF-8 식별기호는 항상식별기호 제거로 선택합니다.
+4. 문서를 편집하거나 제작 후, 파일 > 저장 을 할 때, 인코딩을 UTF-8 로 선택하고 저장을 합니다.
+
+
+//groupANDform.php 에서 폼분류 선택상자 출력 디자인 40번째 줄에 있던것.
+include_once("groupANDform.php");
+
+-->
+<div id="form_wrapper">
+	<!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+	<!--							  폼 상단										  -->
+	<!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+	<!-- 폼분류 선택상자 -->
+	<?php 
+	if($af_TABLE2["dummy3"] == "1" and $_GET["mode"] != "admine")
+		{
+			include_once("function/fm_groupSelectBox2.php");
+			include_once("function/fm_formSelectBox2.php");
+		}
+	?>
+	<div id="form_cap">
+		<table>
+			<tr>
+				<td id='top_img'>
+				<!-- 상단 배너이미지 -->
+				<?php
+				$af_arr_format = array("jpg","jpeg","gif");				//업로드 된 허용확장자
+							
+					for($z=0; $z < count($af_arr_format);$z++)
+						{
+						if(file_exists("upload/".$af_TABLE5[name]."/top_img.".$af_arr_format[$z].""))
+							{						
+							echo "<img src='upload/".$af_TABLE5[name]."/top_img.".$af_arr_format[$z]."' alt='상단배너이미지'>";						
+							}
+						}
+				?>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+	<?php if($af_TABLE5["form_type"] == "0"){?>
+	<!-- 폼제목(주문폼일 때) -->
+	<div id='order_head'>	
+		<p id='f_title' style="background-image:url(skins/<?php echo $af_TABLE5[skin_name];?>/img/bg_title.gif?>);"><?php echo $af_TABLE5["title_text"];?>
+		</p>		
+	</div>
+	<?php }?>
+
+	<?php if($af_TABLE5["form_type"] == "1"){?>
+	<!-- 폼 제목(폼메일일 때) -->
+	<?php }?>
+
+	<!-- 관리자모드에서 설정한 해당폼의 상단에 표시될 글 -->
+	<div id='msg_top'>	
+		<img src="http://miraebiz.kr/addform/skins/mbk-solution/title.png" alt="상담전화" />
+	</div>	
+
+
+	<!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+	<!--	품목설정에서 추가한 항목들을 가져와서 화면에 뿌려주는 디자인 파일 인클루드	  -->
+	<!--	design_orderform.php(주문폼 품목루핑) design_formmail.php(폼메일 항목루핑)    -->
+	<!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+	<?php 
+		if($af_TABLE5["form_type"] == "0") include_once("design_orderform.php");
+		if($af_TABLE5["form_type"] == "1") include_once("design_formmail.php");
+	?>
+
+	<!-- 모든 항목들의 제목과 고객의 선택/입력값이 입력되는 히든필드  -->
+	<input type="hidden" name="total_data" value="" readonly>
+	
+	<!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+	<!--								메인폼 출력 끝									  -->
+	<!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+
+	<!-- 관리자모드에서 업로드한 해당폼의 물품상세설명 이미지와 설명글    -->
+	<div id='detail_img'>
+		<?php include_once("detailExp.php");?>
+	</div>
+	
+	<!-- ################################################################################ -->
+	<!-- 아래 한줄은 허락없이 삭제/편집해선 안되며, 무단삭제시 프로그램오류의 요인이됩니다-->	
+	<!-- ################################################################################ -->	
+
+	
+
+	<!-- 관리자모드에서 설정한 해당폼의 하단 글
+	<div id="msg_bottom">
+		<?php echo $af_TABLE5["msg_bottom"]?>
+	</div> -->
+
+	<!-- 관리자모드에서 업로드한 해당폼의 하단 이미지 -->
+	<?php
+		for($z=0; $z < count($af_arr_format);$z++)
+			{
+			if(file_exists("upload/".$af_TABLE5[name]."/bottom_img.".$af_arr_format[$z].""))
+				{			
+				echo "<div id='bottom_img'>";
+				echo "<img src='upload/".$af_TABLE5[name]."/bottom_img.".$af_arr_format[$z]."' alt='하단배너이미지'>";
+				echo "</div>";			
+				}
+			}
+	?>
+</div>
+
+

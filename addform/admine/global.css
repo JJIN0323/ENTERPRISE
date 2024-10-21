@@ -1,0 +1,149 @@
+/***************************************************************************************/
+/*																					   /*
+/*						애드폼 관리자 모드 스타일시트 입니다						   /*				
+/*						사이트: http://www.addform.net								   /*
+/*						개발자: 박성규												   /*
+/*																					   /*
+/***************************************************************************************/
+
+
+/***************************************************************************************/
+/*								공통적용 스타일										   */
+/***************************************************************************************/
+
+/* 문서의 전체 속성 설정 start */
+*{FONT-FAMILY: "돋움", "돋움체","굴림", "굴림체",  "Arial";FONT-SIZE: 13px;}
+BODY{	
+	BACKGROUND-COLOR: #e7e3e7;
+	MARGIN-TOP: 10px;
+	MARGIN-BOTTOM: 0px;
+	MARGIN-LEFT: 0px;
+	MARGIN-RIGHT: 0px;
+	COLOR: #000000;
+	/* 아래 TEXT-ALIGN 에서 문서정렬 LEFT,CENTER,RIGHT 중 택일 (불여우에서는 div 태그로 묶고 margin: auto;로*/
+	TEXT-ALIGN: CENTER;
+    /*BACKGROUND-IMAGE: url(../imgs/bg.gif);*/
+    /*BACKGROUND-REPEAT:repeat-x;*/         
+	}
+
+/* DIV 스타일 설정 start */
+DIV {WIDTH: 99%;margin: auto;}
+#main_left {text-align:left;} /* addform_order_list.php,modify_layout.php,modify_admine.php,form_env.php,form_add.php */
+#mainDiv{}					  /* addform_order_list.php,addform_list.php,addform_group.php */	
+
+/* 필드셋 스타일 start */
+FIELDSET{margin-top:20px;padding:10px;}
+LEGEND {font-family:"굴림","arial";font-weight:bold;font-size: 1em;color:#616588;}
+
+/* 테이블 스타일 설정 */
+TABLE {font-size: 1em;border-collapse: collapse;width: 100%;}
+CAPTION {text-align: left;}
+TD,TH {text-align: center;border: 1px solid #c0c0c0;padding: 3px 5px 2px 5px;}
+TH {background: url(img/th_bg.png) no-repeat left top;color: white;border-color: #666666;line-height: 20px;}
+TR.ruled{background: url(img/td_bg.png) repeat-x left top;}
+TR.ruled2{background-color:#bacae2;}
+.noborder TD {border: 0px solid #73afb7;padding: 3px 5px 2px 5px;}
+TBODY.noborder TD,TFOOT.noborder TD {border: 0px solid #73afb7;padding: 3px 5px 2px 5px;}
+
+/* H,P문단과 엑센트 강조 스타일설정 start */
+p,h1,h2,h3,h4,h5,h5,ol,ul {margin: 0px;	padding: 0px;}
+h1 {font-size: 2.4em;}
+h1.#en {font-family:"times new roman","verdana","tahoma";}
+h2 {font-size: 1.5em;}
+p {font-size: 1em;
+	/*사용하지말것text-indent: 2em;*/
+	line-height: 150%;margin-top:5px;
+}
+.stress {color: #73afb7;font-size: 1.5em;margin-bottom: 10px;font-weight: bold;letter-spacing: 1px;font-variant: small-caps;text-indent: 0;}
+.link {	color: blue;text-decoration: underline;}
+cite {font-size:11px;}
+
+
+/* link 스타일 설정 start */
+A:link{TEXT-DECORATION: none;COLOR: #000000;}
+A:hover{TEXT-DECORATION: none;COLOR : #000000;BORDER: none;}
+A:visited{TEXT-DECORATION: none;COLOR : #000000;BORDER: none;}
+
+/* 이미지 스타일 */
+IMG {BORDER: none;}
+
+/* UL, LI 스타일 설정 start */
+LI {list-style: none;padding-bottom: 7px;}
+
+/* 폼 스타일 설정 */
+INPUT{FONT-FAMILY: "굴림","굴림체","돋움","돋움체","Arial";}
+INPUT.opt{ background-image:url(img/bg_option.gif); background-repeat:no-repeat; background-position:0px center;}
+INPUT.code_re{background-color:silver;}
+LI.th INPUT{ background-color:#d5ccac;text-align:center;}
+LI.th2 INPUT{background-color:silver;}
+#order_modify input{padding-left:3px;padding-right:3px;}
+.tag{background-image:url(img/htmltag.gif);background-repeat:no-repeat;background-position:right top;}
+.tag_s{background-image:url(img/htmltag_s.gif);background-repeat:no-repeat;background-position:right top;}
+
+/* 버튼 스타일 설정 */
+.btn_big_main{height:50px;}
+.btn_list{width:70px;height:39px;font-size:11px;}
+.btn_esti{width:70px;padding-top:2px;font-size:11px;}
+.btn_delivery{width:70px;height:39px;padding-top:2px;font-size:11px;}
+.btn_set{width:100px;height:35px;font-size:13px;}
+.btn_red{background-color:#cc9966;}
+.btn_blue{color:white;background-color:#004a84;}
+.btn_big{width:100px;height:30px;}
+.btn_del{color:red;}
+.input_big{font-size:16px;font-weight:bold;height:30px;border:3px solid gray;color:#004a84;padding-top:3px;padding-bottom:0;padding-left:5px;}
+.linkbox{height:30px;width:30px;border:2px solid #ccc;margin:0 10px 0 10px;}
+
+
+/***************************************************************************************/
+/*								main.html											   */
+/***************************************************************************************/
+TD.btn_main_bg{text-align:left;margin:0;padding:0;background-image:url(img/btn_bottom.gif);background-repeat:repeat-x;background-position:0px 24px;	}
+
+
+/***************************************************************************************/
+/*								addform_order_list.php								   */
+/***************************************************************************************/
+.order {background: url(img/th_bg2.png) no-repeat left top;color:#333;border-color: #fff;height:50px;font-weight:normal;font-size:12px;}
+table#order_list_tbl td{border:0;}
+#order_list td{border:0;}
+#order_list .order_list{border:0;border-bottom:1px solid #c0c0c0;border-right:1px dotted #ccc;}
+div#order_summary{}
+#order_summary fieldset{margin:15px 0 0 0;padding:5px;margin-left:0;}
+#order_summary ul{text-align:left;}
+#order_summary li{border-top:1px solid #ffffff;	border-right:1px solid #aba9a9;	border-bottom:1px solid #aba9a9;border-left:5px solid #999;padding:5px;margin-left:5px;margin-bottom:3px;line-height:2em;}
+.time{font-size:10px;color:999;}
+#calendar1div{border:1px solid #d0d0bf;margin-top:10px;}
+.calendar_thumb td{padding:1px 0 1px 0;}
+td.border1{border:1px solid #666;}
+
+/***************************************************************************************/
+/*								order_modify.php									   */
+/***************************************************************************************/
+TD.tdAlignLEFT {text-align: left;}
+TD.td_client_orderM {background-color:#e9e9e9;}
+
+
+/***************************************************************************************/
+/*								form_add.php										   */
+/***************************************************************************************/
+#display_txt table{border:1px solid #999;float:left;width:50%;}
+#display_txt td.thead {font-weight:bold;padding:10px;background-color:#c6c6bf;}
+#display_txt td.item {width:150px;}
+#display_txt td.val {background-color:#fff;}
+span.radio_select{font-weight:bold;}
+.tip li{color:gray;line-height:10px;}
+
+
+/***************************************************************************************/
+/*								add_items.php										   */
+/***************************************************************************************/
+span.formmail_hide{}
+.tbl_head td{background-color:#c0c0c0;border:1px solid #666666;border-bottom:2px solid #666666;}
+.tbl_head span{font-weight:bold;}
+.item_list td{border:0;}
+.item_opt{margin-top:10px;}
+.item_opt td{border:1px solid #c0c0c0;text-align:left;}
+td.item_optL{font-weight:bold;color:#626588;background-color:#cdcdcd;}
+td.item_optR{text-align:left;}
+.tbl_addItem td{text-align:left;background-color:#cccccc;}
+

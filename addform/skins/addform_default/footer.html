@@ -1,0 +1,25 @@
+<div id="footer_wrapper">
+	<?php if($af_TABLE7[yn_companydata] == "on") {?>
+	<!-- 전체폼 기본환경 설정에서 설정한 사업자 정보 -->
+		<ul>
+			<li>
+				<span>상호 : <?php echo $af_TABLE1["supply_name"];?></span> | 
+			<?php if($af_TABLE1["supply_num"]){?>
+				<span>사업자등록번호 : <?php echo $af_TABLE1["supply_num"];?></span> | 
+			<?php } ?>
+				<span>대표 : <?php echo $af_TABLE1["supply_man"];?></span> | 
+				<span>주소 : <?php echo $af_TABLE1["supply_address"];?></span> |  
+				<span>대표전화 : <?php echo $af_TABLE1["tel"];?></span> | 
+			<?php if($af_TABLE1["fax"]){?>
+				<span>팩스 : <?php echo $af_TABLE1["fax"];?></span> | 
+			<?php } ?>
+			<?php if($af_TABLE1["sell_num"]){?>
+				<span>통신판매업신고번호 : <?php echo $af_TABLE1["sell_num"];?></span> | 
+			<?php } ?>
+				<span>전자우편 : <?php echo $af_TABLE1["email_address"];?></span> 
+			</li>	
+		</ul>
+	<?php }?>
+	<!-- 하단 추가코딩  -->
+	<?php if($af_TABLE7[yn_footer_custom] == "on") echo $af_TABLE7[footer_custom];?>
+</div>

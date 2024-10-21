@@ -1,0 +1,81 @@
+<?php
+include_once("../lib/lib.php");
+include_once("../lib/initial_lib.php");
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+
+<HEAD>
+<meta http-equiv='content-type' content='text/html; charset=utf-8'>
+<meta name='robots' content='none,noindex,nofollow'>
+<TITLE></TITLE>
+<LINK REL="stylesheet" HREF="global.css" TYPE="text/css">
+
+</HEAD>
+
+<BODY onload="document.press4.src='<?php echo af_admine_img;?>/btnOrder_2.gif'">
+
+<DIV STYLE="TEXT-ALIGN:LEFT">
+		<!--  탭메뉴 start  -->
+<TABLE class="noborder">
+	<TR>
+
+		<TD style="width:88px;padding:0;margin:0;">
+		<A HREF='addform_order_list.php' TARGET='main_iframe' onfocus="this.blur()">
+		<img src="<?php echo af_admine_img;?>/btnOrder_0.gif" onmousedown="this.src='<?php echo af_admine_img;?>/btnOrder_2.gif';document.press1.src='<?php echo af_admine_img;?>/btnForm_0.gif';document.press2.src='<?php echo af_admine_img;?>/btnGroup_0.gif';document.press3.src='<?php echo af_admine_img;?>/btnAdmin_0.gif';document.press5.src='<?php echo af_admine_img;?>/btnLayout_0.gif';document.press9.src='<?php echo af_admine_img;?>/btnStaff_0.gif';" name="press4" border="0" alt="접수목록">
+		</A>
+		</TD>
+
+		<TD style="width:104px;padding:0;margin:0;">
+		<A HREF='addform_list.php' TARGET='main_iframe' onfocus="this.blur()">
+		<img src="<?php echo af_admine_img;?>/btnForm_0.gif" onmousedown="this.src='<?php echo af_admine_img;?>/btnForm_2.gif';document.press2.src='<?php echo af_admine_img;?>/btnGroup_0.gif';document.press3.src='<?php echo af_admine_img;?>/btnAdmin_0.gif';document.press4.src='<?php echo af_admine_img;?>/btnOrder_0.gif';document.press5.src='<?php echo af_admine_img;?>/btnLayout_0.gif';document.press9.src='<?php echo af_admine_img;?>/btnStaff_0.gif';" name="press1" border="0" alt="폼관리">
+		</A>
+		</TD>
+		
+		<TD style="width:88px;padding:0;margin:0;">
+		<A HREF='addform_Group.php' TARGET='main_iframe' onfocus="this.blur()">
+		<img src="<?php echo af_admine_img;?>/btnGroup_0.gif" onmousedown="this.src='<?php echo af_admine_img;?>/btnGroup_2.gif';document.press1.src='<?php echo af_admine_img;?>/btnForm_0.gif';document.press3.src='<?php echo af_admine_img;?>/btnAdmin_0.gif';document.press4.src='<?php echo af_admine_img;?>/btnOrder_0.gif';document.press5.src='<?php echo af_admine_img;?>/btnLayout_0.gif';document.press9.src='<?php echo af_admine_img;?>/btnStaff_0.gif';" name="press2" border="0" alt="그룹관리">
+		</A>
+		</TD>
+
+		<TD style="width:88px;padding:0;margin:0;">
+		<A HREF='modify_layout.php' TARGET='main_iframe' onfocus="this.blur()">
+		<img src="<?php echo af_admine_img;?>/btnLayout_0.gif" onmousedown="this.src='<?php echo af_admine_img;?>/btnLayout_2.gif';document.press1.src='<?php echo af_admine_img;?>/btnForm_0.gif';document.press2.src='<?php echo af_admine_img;?>/btnGroup_0.gif';document.press3.src='<?php echo af_admine_img;?>/btnAdmin_0.gif';document.press4.src='<?php echo af_admine_img;?>/btnOrder_0.gif';document.press9.src='<?php echo af_admine_img;?>/btnStaff_0.gif';" name="press5" border="0" alt="레이아웃편집">
+		</A>
+		</TD>
+
+		<TD style="width:100px;padding:0;margin:0;">
+		<A HREF='modify_admine.php' TARGET='main_iframe' onfocus="this.blur()">
+		<img src="<?php echo af_admine_img;?>/btnAdmin_0.gif" onmousedown="this.src='<?php echo af_admine_img;?>/btnAdmin_2.gif';document.press1.src='<?php echo af_admine_img;?>/btnForm_0.gif';document.press2.src='<?php echo af_admine_img;?>/btnGroup_0.gif';document.press4.src='<?php echo af_admine_img;?>/btnOrder_0.gif';document.press5.src='<?php echo af_admine_img;?>/btnLayout_0.gif';document.press9.src='<?php echo af_admine_img;?>/btnStaff_0.gif';" name="press3" border="0" alt="관리자설정">
+		</A>
+		</TD>
+		
+		<TD style="width:100px;padding:0;margin:0;">
+		<A HREF='admine_list.php' TARGET='main_iframe' onfocus="this.blur()">
+		<img src="<?php echo af_admine_img;?>/btnStaff_0.gif" onmousedown="this.src='<?php echo af_admine_img;?>/btnStaff_2.gif';document.press1.src='<?php echo af_admine_img;?>/btnForm_0.gif';document.press2.src='<?php echo af_admine_img;?>/btnGroup_0.gif';document.press3.src='<?php echo af_admine_img;?>/btnAdmin_0.gif';document.press4.src='<?php echo af_admine_img;?>/btnOrder_0.gif';document.press5.src='<?php echo af_admine_img;?>/btnLayout_0.gif'" name="press9" border="0" alt="관리사원등록">
+		</A>
+		</TD>	
+
+		<TD class="btn_main_bg" nowrap style="text-align:right;color:#666666;">
+		<?php echo "since ".date("Y.m.d",setup_date);?>
+		<img src="<?php echo af_admine_img;?>/myaccount.gif" onclick="javascript:void(window.open('admine_add.php?w=600&amp;h=650&amp;mode=modify','modify','width=600,height=650,statusbar=no,scrollbars=yes,toolbar=no'))" style="cursor:hand;vertical-align:middle;">		
+		</TD>
+
+	</TR>
+</TABLE>
+
+		<!--  탭메뉴 end  --> 
+</DIV>
+
+
+<DIV STYLE="HEIGHT:90%">
+		<IFRAME style="width:100%;height:100%;border:1;border-color:silver" SCROLLING="auto" SRC="addform_order_list.php" NAME="main_iframe"></IFRAME>
+</DIV>
+
+<div STYLE="HEIGHT:90%;margin-top:10px;font-size:11px;color:gray;">
+<?php echo af_txt_lic;?>
+</div>
+
+</BODY>
+
+</HTML>

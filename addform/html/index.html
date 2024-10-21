@@ -1,0 +1,17 @@
+<?php
+include_once("head.html");
+
+if(!$_GET["pageid"])
+{
+	echo ("잘못된 접근입니다.");
+}
+else
+{
+	if($_GET["pageid"] == "progress") 
+	{
+		include_once("progress.html");
+	}
+}
+
+include_once("foot.html");
+?>

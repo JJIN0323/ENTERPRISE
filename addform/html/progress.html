@@ -1,0 +1,77 @@
+<div id="title">
+	<?php echo $_GET[title];?>
+</div>
+
+<div class="tip">
+	<table class="tip_table">
+		<tr>
+			<td class='item'>
+				접수번호
+			</td>
+			<td class='val'>
+				<?php echo $_GET[af_order_no];?>
+			</td>
+		</tr>
+			<tr>
+			<td class='item'>
+				접수시각
+			</td>
+			<td class='val'>
+				<?php echo date("Y 년 m 월 d 일 h시i분s초 (D)",$_GET[input_date]);?>
+			</td>
+		</tr>
+		<tr>
+			<td class='item'>
+				진행상황
+			</td>
+			<td class='val' style='font-weight:bold;'>
+				<?php echo $_GET[situation];?>
+			</td>
+		</tr>
+		<tr>
+			<td class='item'>
+				고객이름
+			</td>
+			<td class='val'>
+				<?php echo $_GET[client_name];?>
+			</td>
+		</tr>
+		<tr>
+			<td class='item'>
+				전자메일
+			</td>
+			<td class='val' style='color:blue;'>
+				<?php echo $_GET[client_email];?>
+			</td>
+		</tr>
+	
+		<tr>
+			<td class='item'>
+				열람여부
+			</td>
+			<td class='val'>
+				<?php
+				if($_GET[readN] =="1")
+				{
+					echo "담당자 열람확인";
+				}
+				else
+				{
+					echo "담당자 아직 미열람";
+				}
+				?>
+			</td>
+		</tr>
+	</table>	
+</div>
+
+<div id="tip_normal" class="print">
+	* 열람여부는 담당자가 관리자페이지에서 접수내용을 열람확인한 여부입니다.<br>
+	* 열람여부가 미열람으로 표시되어 있어도, 이메일로 확인했을 수도 있습니다.<br>
+	* 고객정보보호를 위해 상세내용은 웹에서 제공하지 않고 이메일로 제공됩니다.<br>
+	* 진행상황에 대한 상세한 내용은, 접수시 입력한 이메일을 확인하여 주십시오.
+</div>
+<div id="btn" class="print">
+	<input type="button" value="close" onclick="window.close();">
+	<input type="button" value="print" onclick="window.print();">
+</div>

@@ -1,0 +1,312 @@
+<!--
+프로그램명 : 애드폼(영문 addform																		
+프로그램용도: 견적서 주문서 폼메일 제작											 
+제작자: 박성규																	   
+공식배포처: http://www.addform.net												
+프로그램 편집시 위 제작자 정보를 편집하거나 삭제해서는 안됩니다
+
+
+############################### 스킨 제작자 정보 START   ################################
+skin by http://www.addform.net
+
+
+
+
+
+############################### 스킨 수정/제작시 참고사항   #############################
+스킨파일 제작/수정시 utf-8 로의 편집을 지원하는, 에디터플러스등의 최신 버전을 설치하여 사용하세요.
+에디터플러스에서 편집한다는 가정하에 바람직한 스킨 파일 제작방법입니다.
+아래와 같지않다면, 정상 편집한 파일이라도 웹브라우저상에서 깨지거나 정상실행되지 않을 수 있습니다.
+
+1. 에디터플러스를 실행
+2. 상단 메뉴 문서 > 영구적인 설정을 차례로 클릭
+3. 파일 > 기본인코딩을 UTF-8 로 설정하고, UTF-8 식별기호는 항상식별기호 제거로 선택합니다.
+4. 문서를 편집하거나 제작 후, 파일 > 저장 을 할 때, 인코딩을 UTF-8 로 선택하고 저장을 합니다.
+
+참고: 
+본 문서는 이메일로도 전송될 것이므로 외부스타일시트를 참조하지 않고, 스타일을 직접 태그내에 기술하는것이 좋습니다.
+이미지가 사용될 경우, 이미지는 http://~로 시작하는 전체경로를 사용하세요.
+화면상에 표시되는 문구들은 대부분 상수정의 되어 있으며, lib/lang/폴더아래의 language.php에서 편집가능합니다.
+good luck!
+-->
+<!--##################################################################################-->
+<!--########################### HTML START ###########################################-->
+<!--##################################################################################-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"   "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+	<meta http-equiv='content-type' content='text/html; charset=utf-8'>
+		<!-- 브라우저 상단에 표시될 폼메일 제목  -->
+		<title>		
+		<?php echo $af_TABLE5['title_text'];?>
+		</title>
+
+		<link href="skins/<?php echo $af_TABLE5['skin_name'];?>/sheet/print.css" rel="stylesheet" type="text/css" media="print" />
+
+		<script type="text/javascript" src='js/pop_center.js'></script>		
+	</head>
+<body style="text-align:center">
+
+<!-- A4 용지에 적합한 출력사이즈를 위해, 아래에서 width:645px 로 고정	-->
+<div id="wrapper" style="width:645px;margin:auto;FONT-FAMILY:돋움,돋움체,굴림,굴림체,Arial;">
+
+	<!--#####################			  상호/접수번호 		  #######################-->
+	<div id="div_head" style="margin:0;padding:0;">
+		<table id="head" style="border:0;width:100%;font-size:13px;">
+			<tr>
+				<td style="width:50%;text-align:left;border:0;">
+					<strong><?php echo $af_TABLE1['supply_name'];?></strong>
+				</td>
+				<td style="width:50%;text-align:right;border:0;">
+					<strong><?php echo $od_no.$af_TABLE4['af_order_no'];?></strong>
+				</td>
+			</tr>
+		</table>
+	</div>
+	
+	<!--  폼메일 제목 --> 
+	<h1 style="text-align:center;margin-top:0;margin-bottom:20px;padding:10px;border-top:5px solid #777777;font-size:1.5em;font-weight:bold;background-color:silver;color:white;">	
+		<?php echo $af_TABLE5['title_text'];?>
+	</h1>
+
+	<!--#####################			상단 설명  start		 #######################-->
+	<?php 
+	if($af_TABLE5['msg_top'])
+		{
+			echo "<div style='margin-bottom:20px;font-size:13px;text-align:left;'>";
+			echo $af_TABLE5['msg_top'];
+			echo "</div>";
+		}
+	?>
+
+	<!--#####################			  고객정보 			      #######################-->
+	<div id="div_client" style="margin-bottom:20px;">
+		<table id="client" style="border-collapse:collapse;border:2px solid #777777;width:100%;font-size:13px;">		
+			<tr>
+				<td rowspan="4" class="bigSection" style="border:1px solid #777777;background-color:#777777;color:white;width:20px;padding:10px;text-align:center;font-weight:bold;">
+					신</br>
+					청</br>
+					인
+				</td>
+				<td class="section" style="border:1px solid #777777;width:130px;text-align:center;background-color:#e3e3e3;">
+					성명(법인명)
+				</td>
+				<td class="memo" colspan="3" style="border:1px solid #777777;text-align:left;padding:3px;">
+					<strong><?php echo $clean['client_name'].$af_TABLE4['client_name'];?></strong>
+				</td>
+			</tr>
+			<tr>
+				<td class="section" style="border:1px solid #777777;width:130px;text-align:center;background-color:#e3e3e3;">
+					전화번호
+				</td>
+				<td class="memo" style="border:1px solid #777777;text-align:left;padding:3px;">
+					<?php echo $clean['client_tel'].$af_TABLE4['client_tel'];?>
+				</td>
+				<td class="section" style="border:1px solid #777777;width:130px;text-align:center;background-color:#e3e3e3;">
+					팩시밀리
+				</td>
+				<td class="memo" style="border:1px solid #777777;text-align:left;padding:3px;">
+					<?php echo $clean['client_fax'].$af_TABLE4['client_fax'];?>
+				</td>
+			</tr>
+			<tr>
+				<td class="section" style="border:1px solid #777777;width:130px;text-align:center;background-color:#e3e3e3;">
+					이동전화
+				</td>
+				<td class="memo" style="border:1px solid #777777;text-align:left;padding:3px;">
+					<?php echo $clean['client_hp'].$af_TABLE4['client_hp'];?>
+				</td>
+				<td class="section" style="border:1px solid #777777;width:130px;text-align:center;background-color:#e3e3e3;">
+					이 메 일
+				</td>
+				<td class="memo" style="border:1px solid #777777;text-align:left;padding:3px;color:blue;">
+					<?php echo $clean['client_email'].$af_TABLE4['client_email'];?>
+				</td>
+			</tr>
+			<tr>
+				<td class="section" style="border:1px solid #777777;width:130px;text-align:center;background-color:#e3e3e3;">
+					주	소
+				</td>
+				<td class="memo" colspan="3" style="border:1px solid #777777;text-align:left;padding:3px;">
+					<?php echo $clean['client_address'].$af_TABLE4['client_address'];?>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+	<!--#####################			  고객메모 			      #######################-->
+	<?php 
+	if($clean['client_memo'] or $af_TABLE4['client_memo']){?>
+	<div id="div_cmemo" style="margin-bottom:20px;">
+		<table id="cmemo" style="border-collapse:collapse;border:2px solid #777777;width:100%;font-size:13px;">
+			<tr>
+				<td class="bigSection" style="border:1px solid #777777;background-color:#777777;color:white;width:20px;padding:10px;text-align:center;font-weight:bold;">
+					m</br>
+					e</br>
+					m</br>
+					o
+				</td>
+				<td class="section" style="border:1px solid #777777;width:130px;text-align:center;background-color:#e3e3e3;">
+					고객메모
+				</td>
+				<td class="memo" style="border:1px solid #777777;text-align:left;padding:3px;">
+					<?php echo nl2br($clean['client_memo']).nl2br($af_TABLE4['client_memo']);?>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<?php }?>
+	
+	<!--#####################  항목 배열의 길이만큼 루핑  start   ########################-->
+	<div id="div_loop" style="margin-bottom:20px;">	
+	<?php
+	function af_formmail_recode()
+	{
+	global $it_name;
+	global $input_data;
+	$rowsN = count($it_name);
+
+		echo "<table id='loop' style='border-collapse:collapse;border:2px solid #777777;width:100%;font-size:13px;'>";
+	for ($i=0;$i<count($it_name);$i++) 
+		{		
+				
+		echo "<tr>";
+			if($i == 0)
+			{
+			  echo ("<td class='bigSection' rowspan='$rowsN' style='border:1px solid #777777;background-color:#777777;color:white;width:20px;padding:10px;text-align:center;font-weight:bold;'>
+						신</br>
+						청</br>
+						내</br>
+						역
+					</td>");
+			}
+			  echo ("<td class='section' style='border:1px solid #777777;width:130px;text-align:center;background-color:#e3e3e3;'>
+					<!-- 항목 제목 -->
+						$it_name[$i]
+					</td>
+					<td class='memo' style='border:1px solid #777777;text-align:left;padding:3px;'>
+					<!-- 항목에 고객이 입력한 값 (옵션은 ⓘ 구분자로 줄바꿈하여 출력) -->
+					");
+					echo str_replace("ⓘ","<br>",nl2br($input_data[$i]));
+			  echo("</td>");
+		echo "</tr>"; 
+		}
+		echo "</table>";
+	}
+	af_formmail_recode();
+	?>  
+	</div>
+   
+	<!--#####################			결제금액  start			 ########################-->
+	<?php if($af_TABLE5['dummy8'] == "1"){?>
+	<div id="div_sum" style="margin-bottom:20px;">
+		<table id="sum" style="border-collapse:collapse;border:2px solid #777777;width:100%;font-size:13px;">
+			<tr>
+				<td class="bigSection" rowspan="2" style="border:1px solid #777777;background-color:#777777;color:white;width:20px;padding:10px;text-align:center;font-weight:bold;">
+					결 제
+				</td>
+				<td class="section" style="border:1px solid #777777;width:130px;text-align:center;background-color:#e3e3e3;">
+					입금계좌
+				</td>
+				<td class="memo" colspan="3" style="border:1px solid #777777;text-align:left;padding:3px;">
+					<!-- 은행 | 계좌번호 | 예금주 출력-->
+					<?php echo af_txt_form_add_31;?> :  <strong><?php echo $bank_name?></strong> | <?php echo af_txt_form_add_32;?> : <strong><?php echo $bank_num?></strong> | <?php echo af_txt_form_add_33;?> : <strong><?php echo $bank_who?></strong>					
+				</td>				
+			</tr>
+			<tr>
+				<td class="section" style="border:1px solid #777777;width:130px;text-align:center;background-color:#e3e3e3;">
+					결제방법
+				</td>
+				<td class="memo" style="border:1px solid #777777;text-align:left;padding:3px;">
+					<?php if($_POST['tno'] or $af_TABLE4['tno']) echo "전자결제";?>
+					<?php if(!$_POST['tno'] and !$af_TABLE4['tno']) echo "무통장입금 ";?>			
+					<?php if($pay_cancle =="on" or $af_TABLE4['pay_cancel'] == "on") echo "<span style='color:blue'>결제완료</span>";?>
+					<?php if(!$pay_cancle and !$af_TABLE4['pay_cancel']) echo "<span style='color:#cc6600'>미결제</span>";?>
+					<?php if($af_TABLE4['pay_cancel'] == "off") echo "<span style='color:red'>결제취소</span>";?>
+				</td>
+				<td class="section" style="border:1px solid #777777;width:130px;text-align:center;background-color:#e3e3e3;">
+					결제금액
+				</td>
+				<td class="memo" style="border:1px solid #777777;text-align:left;padding:3px;text-align:right;">
+					<?php echo $af_TABLE5['coin_unit']." ";?>
+					<strong>
+					<?php if($clean['total_sum']) echo number_format($clean['total_sum'],$number_formatN);?>
+					<?php if($af_TABLE4['sum']) echo number_format($af_TABLE4['sum'],$number_formatN);?>
+					</strong>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<?php }?>
+
+	<!--#####################			하단 설명  start		 #######################-->
+	<?php 
+	if($af_TABLE5['msg_bottom'])
+		{
+			echo "<div style='margin-bottom:20px;font-size:13px;text-align:left;'>";
+			echo $af_TABLE5['msg_bottom'];
+			echo "</div>";
+		}
+	?>
+
+	<!--#####################			공급자/신청인  start     #######################-->
+	<div style="margin-bottom:20px;">
+		<table style="margin:0;padding:0;border-collapse:collapse;width:100%;">
+			<tr>
+				<td style="width:50%;margin:0;padding:0;">
+					<table style="border-collapse:collapse;border:2px solid #777777;width:100%;font-size:13px;">
+						<tr>
+							<td style="border:1px solid #777777;background-color:#ccc;width:100px;padding:10px;text-align:center;font-weight:bold;">
+								공급자
+							</td>
+							<td style="border:1px solid #777777;text-align:center;">
+								<?php echo $af_TABLE1['supply_name'];?>
+							</td>									
+						</tr>
+						<tr>
+							<td style="border:1px solid #777777;background-color:#ccc;width:100px;padding:10px;text-align:center;font-weight:bold;">
+								신청인
+							</td>
+							<td style="border:1px solid #777777;text-align:center;">
+								<?php echo $clean['client_name'].$af_TABLE4['client_name'];?>
+							</td>									
+						</tr>
+					</table>
+				</td>
+				<td border="0" style="text-align:center;">
+					<p style="font-size:1.2em;color:#666;font-weight:bold;">
+					<?php 
+					if($af_TABLE4['input_date']) 
+						{
+							echo date("Y년m월d일",$af_TABLE4['input_date']);
+						}
+					else echo date("Y년m월d일",time());
+					?>
+					</p>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+
+	<!--#####################				공급자정보				#####################-->
+	<div style="font-size:13px;text-align:left;margin:5px;padding-top:20px;">
+	<strong><?php echo af_txt_order_skin_17;?></strong>:
+	 • <?php echo af_txt_form_add_37;?> :  <?php echo $af_TABLE1["supply_name"];?>
+	  <?php if($af_TABLE1["supply_num"]) echo "• ".af_txt_form_add_38.": ".$af_TABLE1["supply_num"];?>
+	 • <?php echo af_txt_form_add_39;?> : <?php echo $af_TABLE1["supply_man"];?>
+	 • <?php echo af_txt_form_add_35;?> : <?php echo $af_TABLE1["tel"];?>
+	 <?php if($af_TABLE1["fax"]) echo "• ".af_txt_form_add_36.": ".$af_TABLE1["fax"];?>
+	 • email : <?php echo $af_TABLE5["email_address"];?>
+	 • <?php echo af_txt_form_add_40;?> : <?php echo $af_TABLE1["supply_address"];?>	
+	 <?php if($af_TABLE1["sell_num"]) echo "• 통신판매업신고번호: ".$af_TABLE1["sell_num"];?>
+	</div>
+
+
+	<!--##########	아래 제작자 정보를 협의없이 삭제하거나 편집해서는 안됩니다.  #########-->
+	<?php Func_textlicense()?>
+</div>
+
+
+
+

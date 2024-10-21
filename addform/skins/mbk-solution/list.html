@@ -1,0 +1,91 @@
+<!--레코드 테이블 출력--> 
+<div id="list_wrapper">
+	<!-- 폼분류 선택상자 -->
+	<FORM name='form1' id='form1' method=post action='' onsubmit='return false'>		
+	<?php 
+	if($af_TABLE2["dummy3"] == "1" and $_GET["mode"] != "admine")
+		{
+			include_once("function/fm_groupSelectBox2.php");
+			include_once("function/fm_formSelectBox2.php");
+			include_once("groupANDform.php"); //groupANDform.php 에서 폼분류 선택상자 출력 디자인 	
+		}
+	?>		
+	</FORM>
+	<!-- 폼 타이틀  -->
+	<h3 class="title_list"><?php echo $af_TABLE5['title_text'];?></h3>
+	<div>
+	  <table summary="접수리스트 출력" id="order_list"> 
+		  <caption style="padding-bottom:20px;">
+		  <!-- 접수내역 수 -->
+			<?php echo af_txt_order_list_7;?> <strong><?php echo $res_count;?></strong> <?php echo af_txt_order_list_6;?>	 
+			<a href="view_list.php?mode=nameMode&amp;fname=<?php echo $af_TABLE5['name'];?>">[<?php echo $af_TABLE5['name'];?> <u>All</u>]</a>
+		  </caption>
+
+		<thead>	
+			<tr>
+				<td id="admin_left" colspan="4">
+					※ 오른쪽의 진행상황을 클릭하시면 진행내역을 확인하실 수 있습니다.
+				</td>
+				<td id="admin" >	
+				<!-- 관리자모드 접속 -->
+					<a href='admine/'><img src='imgs/adminKey.gif' align='middle' alt='관리자모드 접속'></a>
+				</td>
+			</tr>
+			<tr>
+				<!-- 접수번호  -->
+				<th nowrap class="order" scope="col"><?php echo af_txt_order_list_30;?></th>
+				<!-- 신청구분 -->
+				<th nowrap class="order" scope="col"><?php echo af_txt_order_list_8;?></th>
+				<!-- 고객이름 -->
+				<th nowrap class="order" scope="col"><?php echo af_txt_order_list_9;?></th>	
+				<!-- 접수일자 -->
+				<th nowrap class="order" scope="col"><?php echo af_txt_order_list_10;?></th>
+				<!-- 진행상황 -->
+				<th nowrap class="order" scope="col"><?php echo af_txt_order_list_11;?></th>				
+			 </tr>
+		</thead>
+
+		<tbody>	
+				<!-- 접수내역	-->		
+			<?php echo f_loopRec();?>
+
+		</tbody>
+
+		
+	</table>
+	</div>
+
+	<!-- 쓰기  -->
+	<div id="write">
+		<img src="skins/<?php echo $af_TABLE5['skin_name'];?>/img/submit.gif" alt="접수하기"onclick='document.location.href="view_addform.php?fname=<?php echo $_GET["fname"]?>"' style="cursor:hand;">				
+	</div>
+
+	<!-- 페이지분할  -->
+	<div id="page">
+		<?php echo f_pageDiv();?> 
+	</div>
+
+	<!--하단 선택상자 및 검색--> 
+	<div id="search">
+	<table summary="검색 테이블">
+		<tr>
+			<td class="tip">
+				※ 고객정보 보호를 위해, 접수내용은 웹에서의 검색이 허용되지 않고, 현재열람페이지에서 진행상황만 알 수 있습니다.<br>
+				※ 아래 검색입력란에서 신청/주문/접수시 입력했던 고객이름을 입력하여, 해당 고객의 진행상황을 검색할 수 있습니다.
+			</td>
+		</tr>		
+		<tr>			
+			<td>
+				<form name="search_form" METHOD="get" ACTION="<?php echo URL;?>">			
+							<INPUT TYPE="hidden" NAME="code" VALUE="no"> 
+							<INPUT TYPE="hidden" NAME="desc" VALUE="desc">
+							<INPUT TYPE="hidden" NAME="mode" VALUE="search_form"> 
+							<INPUT TYPE="text" NAME="keywd" VALUE="<?php echo $_GET['keywd']?>"> 
+							<INPUT TYPE="hidden" NAME="fname" VALUE="<?php echo $_GET['fname']?>"> 
+							<INPUT TYPE="submit" VALUE="<?php echo af_txt_search;?>">
+				</form>
+			</td>
+		</tr>
+	</table>
+	</div>
+</div>
